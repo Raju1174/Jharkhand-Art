@@ -1,32 +1,38 @@
-import { Award, Target, Eye, Users, CheckCircle, ArrowRight } from 'lucide-react';
+import { Award, Target, Eye, Users, CheckCircle, ArrowRight, Hammer, Palette, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './About.css';
 
 const values = [
   {
     icon: <Award size={32} />,
-    title: 'Quality Excellence',
-    description: 'We never compromise on the quality of materials and craftsmanship.',
+    title: 'Premium Quality',
+    description: 'We use only high-grade gypsum and materials to ensure durability and elegant finishing.',
   },
   {
-    icon: <Users size={32} />,
-    title: 'Customer Focus',
-    description: 'Your vision is our priority. We work closely to bring your ideas to life.',
+    icon: <Palette size={32} />,
+    title: 'Skilled Craftsmanship',
+    description: 'Our experienced artisans blend traditional artistry with modern techniques.',
   },
   {
-    icon: <Target size={32} />,
-    title: 'Precision',
-    description: 'Every detail matters. Our artisans ensure perfection in every piece.',
+    icon: <Hammer size={32} />,
+    title: 'Custom Solutions',
+    description: 'We create bespoke designs tailored to your specific architectural requirements.',
+  },
+  {
+    icon: <Truck size={32} />,
+    title: 'On-Time Delivery',
+    description: 'We ensure timely delivery across Jharkhand and Eastern India.',
   },
 ];
 
-const milestones = [
-  { year: '2009', event: 'Company founded in Ranchi, Jharkhand' },
-  { year: '2012', event: 'Expanded product line to include 3D wall panels' },
-  { year: '2015', event: 'Reached 200+ successful project completions' },
-  { year: '2018', event: 'Started serving clients across Eastern India' },
-  { year: '2022', event: 'Introduced custom design services' },
-  { year: '2024', event: '500+ projects and counting' },
+const services = [
+  'Decorative Ceiling Medallions & Roses',
+  'Designer Cornices & Borders',
+  'Ornamental Wall Panels & Relief Designs',
+  '3D Textured Wall Panels',
+  'Architectural Outdoor Elements',
+  'Decorative Planters & Pillar Moulds',
+  'Custom Design & Manufacturing',
 ];
 
 const About = () => {
@@ -36,7 +42,7 @@ const About = () => {
       <section className="page-header">
         <div className="container">
           <h1>About Us</h1>
-          <p>Discover the story behind our passion for architectural elegance</p>
+          <p>Crafting Architectural Elegance Since 2026</p>
         </div>
       </section>
 
@@ -58,25 +64,47 @@ const About = () => {
             </div>
             <div className="story-content">
               <span className="section-label">Our Story</span>
-              <h2>A Legacy of Craftsmanship</h2>
+              <h2>Premium Gypsum Decor</h2>
               <p>
-                Founded in 2009, Jharkhand Art By Ishita Enterprises began with a simple vision:
-                to bring the timeless beauty of traditional gypsum artistry to modern homes and
-                commercial spaces. What started as a small workshop in Ranchi has grown into one
-                of Eastern India's most trusted names in architectural decorative elements.
+                <strong>Jharkhand Art By Ishita Enterprises</strong> is a trusted manufacturer and supplier
+                of premium decorative gypsum products, specializing in ceiling medallions, cornices,
+                ornamental mouldings, and architectural design elements.
               </p>
               <p>
-                Our founder, inspired by the rich architectural heritage of India, combined
-                traditional techniques with modern manufacturing processes to create products
-                that are both beautiful and durable. Today, we continue this legacy with the
-                same dedication to quality and craftsmanship.
+                With a strong focus on craftsmanship, durability, and elegant detailing, we create
+                high-quality POP and gypsum designs that enhance both residential and commercial interiors.
+                Our products combine traditional artistry with modern manufacturing techniques, ensuring
+                perfect finishing, long-lasting strength, and easy installation.
+              </p>
+              <p>
+                Based in Bokaro, Jharkhand, we are committed to delivering customized decorative solutions
+                for homeowners, architects, interior designers, and builders across Eastern India and nationwide.
               </p>
               <ul className="story-highlights">
-                <li><CheckCircle size={20} /> Family-owned business with personal attention</li>
-                <li><CheckCircle size={20} /> Master craftsmen with decades of experience</li>
-                <li><CheckCircle size={20} /> Serving homeowners, architects, and contractors</li>
+                <li><CheckCircle size={20} /> High-Grade Gypsum & POP Materials</li>
+                <li><CheckCircle size={20} /> Skilled Artisans & Modern Techniques</li>
+                <li><CheckCircle size={20} /> Serving Architects, Builders & Homeowners</li>
+                <li><CheckCircle size={20} /> Custom Design Solutions Available</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Offer */}
+      <section className="section services-section">
+        <div className="container">
+          <div className="section-title">
+            <h2>What We Offer</h2>
+            <p>Comprehensive range of decorative gypsum castings and architectural ornaments</p>
+          </div>
+          <div className="services-grid">
+            {services.map((service, index) => (
+              <div className="service-item" key={index}>
+                <CheckCircle size={20} />
+                <span>{service}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -91,9 +119,9 @@ const About = () => {
               </div>
               <h3>Our Mission</h3>
               <p>
-                To bring elegance and unique design to every home and commercial space through
-                our premium gypsum decorative products, while maintaining the highest standards
-                of quality and customer satisfaction.
+                To bring elegance, quality, and unique design to every home and commercial space
+                through our premium gypsum decorative products, while maintaining the highest
+                standards of craftsmanship and customer satisfaction.
               </p>
             </div>
             <div className="mission-card">
@@ -102,9 +130,9 @@ const About = () => {
               </div>
               <h3>Our Vision</h3>
               <p>
-                To become India's leading manufacturer of architectural gypsum products,
-                recognized for innovation, quality, and our contribution to beautiful
-                interior spaces across the nation.
+                To become a leading decorative gypsum brand in Eastern India and across the nation,
+                recognized for innovation, quality, and our contribution to beautiful architectural
+                spaces.
               </p>
             </div>
           </div>
@@ -115,8 +143,8 @@ const About = () => {
       <section className="section values-section">
         <div className="container">
           <div className="section-title">
-            <h2>Our Core Values</h2>
-            <p>The principles that guide everything we do</p>
+            <h2>Why Choose Us</h2>
+            <p>What sets Jharkhand Art apart from the rest</p>
           </div>
           <div className="values-grid">
             {values.map((value, index) => (
@@ -130,22 +158,30 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="section timeline-section">
+      {/* Our Expertise */}
+      <section className="section expertise-section">
         <div className="container">
-          <div className="section-title">
-            <h2>Our Journey</h2>
-            <p>Key milestones in our growth story</p>
-          </div>
-          <div className="timeline">
-            {milestones.map((milestone, index) => (
-              <div className="timeline-item" key={index}>
-                <div className="timeline-year">{milestone.year}</div>
-                <div className="timeline-content">
-                  <p>{milestone.event}</p>
-                </div>
+          <div className="expertise-content">
+            <div className="section-title">
+              <h2>Our Expertise</h2>
+              <p>Understanding the difference between Moulds and Decorative Castings</p>
+            </div>
+            <div className="expertise-grid">
+              <div className="expertise-card">
+                <h4>Decorative Moulds</h4>
+                <p>
+                  These are the templates used at construction sites for making unique designs.
+                  Cement or gypsum is poured into these moulds to create beautiful decorative elements.
+                </p>
               </div>
-            ))}
+              <div className="expertise-card">
+                <h4>Decorative Castings</h4>
+                <p>
+                  The finished products made from moulds - ready-to-install ceiling medallions,
+                  wall panels, cornices, and architectural ornaments for your interiors.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -154,12 +190,17 @@ const About = () => {
       <section className="section cta-section-page">
         <div className="container">
           <div className="cta-box">
-            <h2>Ready to Work With Us?</h2>
-            <p>Let's create something beautiful together.</p>
-            <Link to="/contact" className="btn btn-primary">
-              Contact Us Today
-              <ArrowRight size={20} />
-            </Link>
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Contact us for quotations, product details, or custom orders.</p>
+            <div className="cta-buttons">
+              <Link to="/contact" className="btn btn-primary">
+                Get a Quote
+                <ArrowRight size={20} />
+              </Link>
+              <a href="tel:+917857846272" className="btn btn-outline-light">
+                Call: +91 7857846272
+              </a>
+            </div>
           </div>
         </div>
       </section>

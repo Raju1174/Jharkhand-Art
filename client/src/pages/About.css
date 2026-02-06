@@ -85,9 +85,48 @@
   flex-shrink: 0;
 }
 
+/* Services Section */
+.services-section {
+  background: var(--color-off-white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.service-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-item svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.service-item span {
+  color: var(--color-gray-dark);
+  font-weight: 500;
+}
+
 /* Mission Section */
 .mission-section {
-  background: var(--color-off-white);
+  background: var(--color-white);
 }
 
 .mission-grid {
@@ -133,7 +172,7 @@
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-lg);
 }
 
@@ -218,6 +257,42 @@
   margin: 0;
 }
 
+/* Expertise Section */
+.expertise-section {
+  background: var(--color-cream);
+}
+
+.expertise-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.expertise-card {
+  background: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--color-gold);
+}
+
+.expertise-card h4 {
+  color: var(--color-green-deep);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+}
+
+.expertise-card p {
+  color: var(--color-gray);
+  line-height: 1.7;
+}
+
 /* CTA Section Page */
 .cta-section-page {
   background: var(--color-white);
@@ -260,6 +335,10 @@
   }
 
   .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expertise-grid {
     grid-template-columns: 1fr;
   }
 
@@ -287,5 +366,13 @@
 
   .page-header h1 {
     font-size: 2.25rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 }
