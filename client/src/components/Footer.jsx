@@ -55,11 +55,11 @@ const Footer = () => {
               </li>
               <li>
                 <Mail size={18} />
-                <a href="mailto:info@jharkhandart.com">info@jharkhandart.com</a>
+                <a href="mailto:jharkhandart07@gmail.com">jharkhandart07@gmail.com</a>
               </li>
               <li>
                 <MapPin size={18} />
-                <span>Ranchi, Jharkhand, India</span>
+                <span>Bakaspura, Jainamore, Bokaro, Jharkhand</span>
               </li>
             </ul>
           </div>
