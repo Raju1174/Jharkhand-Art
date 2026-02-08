@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { isDarkMode, toggleTheme } = useTheme();
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -49,10 +51,19 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <a href="tel:+917857846272" className="navbar-phone">
-            <Phone size={18} />
-            <span>+91 7857846272</span>
-          </a>
+          <div className="navbar-actions">
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+            <a href="tel:+917857846272" className="navbar-phone">
+              <Phone size={18} />
+              <span>+91 7857846272</span>
+            </a>
+          </div>
         </div>
 
         <button className="navbar-toggle" onClick={toggleMenu} aria-label="Toggle menu">

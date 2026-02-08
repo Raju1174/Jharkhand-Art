@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import './Gallery.css';
 
@@ -6,80 +6,81 @@ const galleryImages = [
   {
     id: 1,
     src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Classic Ceiling Medallion',
-    category: 'Mould Design',
+    title: 'Classic Ceiling Medallion Mould',
+    category: 'Ceiling Moulds',
   },
   {
     id: 2,
     src: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Floral Pattern Mold',
-    category: 'Mould Design',
+    title: 'Floral Pattern Mould',
+    category: 'Ceiling Moulds',
   },
   {
     id: 3,
     src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Victorian Cornice Mold',
-    category: 'Mould Design',
+    title: 'Victorian Cornice Mould',
+    category: 'Cornice Moulds',
   },
   {
     id: 4,
     src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Custom Living Room Design',
-    category: 'Gypsum Design',
+    title: 'Designer Border Mould',
+    category: 'Cornice Moulds',
   },
   {
     id: 5,
     src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Luxury Ceiling Installation',
-    category: 'Gypsum Design',
+    title: 'Luxury Rose Mould',
+    category: 'Ceiling Moulds',
   },
   {
     id: 6,
     src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Geometric Wall Panel Mold',
-    category: 'Mould Design',
+    title: 'Geometric Wall Panel Mould',
+    category: 'Wall Panel Moulds',
   },
   {
     id: 7,
     src: 'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Bespoke Bedroom Ceiling',
-    category: 'Gypsum Design',
+    title: '3D Textured Mould',
+    category: 'Wall Panel Moulds',
   },
   {
     id: 8,
     src: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Ornate Rose Mold',
-    category: 'Mould Design',
+    title: 'Ornate Rose Mould',
+    category: 'Ceiling Moulds',
   },
   {
     id: 9,
     src: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Modern Hall Design',
-    category: 'Gypsum Design',
+    title: 'Modern Pattern Mould',
+    category: 'Wall Panel Moulds',
   },
   {
     id: 10,
     src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: '3D Panel Mold',
-    category: 'Mould Design',
+    title: '3D Diamond Panel Mould',
+    category: 'Wall Panel Moulds',
   },
   {
     id: 11,
     src: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Executive Office Ceiling',
-    category: 'Gypsum Design',
+    title: 'Classic Crown Mould',
+    category: 'Cornice Moulds',
   },
   {
     id: 12,
     src: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Traditional Cornice Mold',
-    category: 'Mould Design',
+    title: 'Traditional Cornice Mould',
+    category: 'Cornice Moulds',
   },
 ];
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState('all');
+  const observerRef = useRef(null);
 
   const filteredImages = filter === 'all'
     ? galleryImages
@@ -106,48 +107,81 @@ const Gallery = () => {
     setSelectedImage(filteredImages[newIndex]);
   };
 
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.scroll-animate').forEach((el) => {
+      observerRef.current.observe(el);
+    });
+
+    return () => observerRef.current?.disconnect();
+  }, [filteredImages]);
+
   return (
     <main className="gallery-page">
       {/* Page Header */}
-      <section className="page-header">
+      <section className="page-hero">
+        <div className="hero-bg-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+        </div>
         <div className="container">
-          <h1>Our Gallery</h1>
-          <p>Explore our Mould and Gypsum Design</p>
+          <div className="page-hero-content">
+            <span className="hero-tag">Portfolio</span>
+            <h1>Our Gallery</h1>
+            <p>Explore our collection of decorative moulds</p>
+          </div>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section className="section">
+      <section className="gallery-section">
         <div className="container">
           {/* Filter */}
-          <div className="gallery-filter">
+          <div className="gallery-filter scroll-animate">
             <button
               className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
               onClick={() => setFilter('all')}
             >
-              All Design
+              All Moulds
             </button>
             <button
-              className={`filter-btn ${filter === 'mould product' ? 'active' : ''}`}
-              onClick={() => setFilter('mould product')}
+              className={`filter-btn ${filter === 'ceiling moulds' ? 'active' : ''}`}
+              onClick={() => setFilter('ceiling moulds')}
             >
-              Mould Design
+              Ceiling Moulds
             </button>
             <button
-              className={`filter-btn ${filter === 'gypsum product' ? 'active' : ''}`}
-              onClick={() => setFilter('gypsum product')}
+              className={`filter-btn ${filter === 'cornice moulds' ? 'active' : ''}`}
+              onClick={() => setFilter('cornice moulds')}
             >
-              Gypsum Design
+              Cornice Moulds
+            </button>
+            <button
+              className={`filter-btn ${filter === 'wall panel moulds' ? 'active' : ''}`}
+              onClick={() => setFilter('wall panel moulds')}
+            >
+              Wall Panel Moulds
             </button>
           </div>
 
           {/* Gallery Grid */}
           <div className="gallery-grid">
-            {filteredImages.map(image => (
+            {filteredImages.map((image, index) => (
               <div
                 key={image.id}
-                className="gallery-item"
+                className="gallery-item scroll-animate"
                 onClick={() => openLightbox(image)}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <img src={image.src} alt={image.title} />
                 <div className="gallery-item-overlay">

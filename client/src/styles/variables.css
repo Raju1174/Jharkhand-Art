@@ -1,22 +1,13 @@
 :root {
-  /* Primary Colors */
+  /* Primary Colors - These stay constant */
   --color-gold: #D4AF37;
   --color-gold-light: #E5C76B;
   --color-gold-dark: #B8960C;
 
-  /* Secondary Colors */
+  /* Secondary Colors - These stay constant */
   --color-green-deep: #1B4332;
   --color-green-medium: #2D6A4F;
   --color-green-light: #40916C;
-
-  /* Neutral Colors */
-  --color-white: #FFFFFF;
-  --color-off-white: #F8F9FA;
-  --color-cream: #FDF8F0;
-  --color-gray-light: #E9ECEF;
-  --color-gray: #6C757D;
-  --color-gray-dark: #343A40;
-  --color-black: #1A1A1A;
 
   /* Typography */
   --font-primary: 'Playfair Display', Georgia, serif;
@@ -29,16 +20,12 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 5rem;
+  --spacing-3xl: 7rem;
 
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
-
-  /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -48,4 +35,92 @@
   /* Container */
   --container-max: 1200px;
   --container-padding: 1.5rem;
+}
+
+/* ==================== */
+/* DARK THEME (Default) */
+/* ==================== */
+:root[data-theme="dark"] {
+  /* Semantic Background Colors */
+  --bg-body: #0D0D0D;
+  --bg-section: #1A1A1A;
+  --bg-section-alt: #0D0D0D;
+  --bg-card: #1F1F1F;
+  --bg-card-hover: #252525;
+  --bg-input: #252525;
+  --features-bg: #000000;
+
+  /* Semantic Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-heading: #FFFFFF;
+
+  /* Semantic Border Colors */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-light: rgba(255, 255, 255, 0.05);
+
+  /* Component Specific */
+  --navbar-bg: #1A1A1A;
+  --navbar-text: #FFFFFF;
+  --footer-bg: #1A1A1A;
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+  /* Legacy Variables - Mapped for dark mode */
+  --color-white: #FFFFFF;
+  --color-off-white: #1A1A1A;
+  --color-cream: #1F1F1F;
+  --color-gray-light: #333333;
+  --color-gray: #999999;
+  --color-gray-dark: #E0E0E0;
+  --color-black: #0D0D0D;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* ==================== */
+/* LIGHT THEME */
+/* ==================== */
+:root[data-theme="light"] {
+  /* Semantic Background Colors */
+  --bg-body: #FFFFFF;
+  --bg-section: #FFFFFF;
+  --bg-section-alt: #F5F5F5;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8F9FA;
+  --bg-input: #F8F9FA;
+  --features-bg: #FFFFFF;
+
+  /* Semantic Text Colors */
+  --text-primary: #1A1A1A;
+  --text-secondary: #343A40;
+  --text-muted: #6C757D;
+  --text-heading: #1B4332;
+
+  /* Semantic Border Colors */
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-color-light: rgba(0, 0, 0, 0.05);
+
+  /* Component Specific */
+  --navbar-bg: #FFFFFF;
+  --navbar-text: #1A1A1A;
+  --footer-bg: #1A1A1A;
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+  /* Legacy Variables - Mapped for light mode */
+  --color-white: #FFFFFF;
+  --color-off-white: #F8F9FA;
+  --color-cream: #FDF8F0;
+  --color-gray-light: #E9ECEF;
+  --color-gray: #6C757D;
+  --color-gray-dark: #343A40;
+  --color-black: #1A1A1A;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
 }

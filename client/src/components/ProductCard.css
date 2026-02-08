@@ -1,14 +1,16 @@
 .product-card {
-  background: var(--color-white);
+  background: var(--bg-card);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: var(--transition-normal);
+  transition: all 0.4s ease;
+  border: 1px solid var(--border-color);
 }
 
 .product-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
 }
 
 .product-image {
@@ -59,12 +61,12 @@
 
 .product-info h3 {
   font-size: 1.25rem;
-  color: var(--color-green-deep);
+  color: var(--text-heading);
   margin-bottom: 0.5rem;
 }
 
 .product-info p {
   font-size: 0.9rem;
-  color: var(--color-gray);
+  color: var(--text-muted);
   line-height: 1.6;
 }
