@@ -6,74 +6,74 @@ const galleryImages = [
   {
     id: 1,
     src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Luxury Living Room',
-    category: 'Residential',
+    title: 'Classic Ceiling Medallion',
+    category: 'Mould Design',
   },
   {
     id: 2,
     src: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Elegant Ceiling Design',
-    category: 'Residential',
+    title: 'Floral Pattern Mold',
+    category: 'Mould Design',
   },
   {
     id: 3,
     src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Classic Cornice Installation',
-    category: 'Residential',
+    title: 'Victorian Cornice Mold',
+    category: 'Mould Design',
   },
   {
     id: 4,
     src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Modern 3D Wall Panel',
-    category: 'Commercial',
+    title: 'Custom Living Room Design',
+    category: 'Gypsum Design',
   },
   {
     id: 5,
     src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Hotel Lobby Design',
-    category: 'Commercial',
+    title: 'Luxury Ceiling Installation',
+    category: 'Gypsum Design',
   },
   {
     id: 6,
     src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Premium Bedroom Ceiling',
-    category: 'Residential',
+    title: 'Geometric Wall Panel Mold',
+    category: 'Mould Design',
   },
   {
     id: 7,
     src: 'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Restaurant Interior',
-    category: 'Commercial',
+    title: 'Bespoke Bedroom Ceiling',
+    category: 'Gypsum Design',
   },
   {
     id: 8,
     src: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Ornate Ceiling Medallion',
-    category: 'Residential',
+    title: 'Ornate Rose Mold',
+    category: 'Mould Design',
   },
   {
     id: 9,
     src: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Office Space Design',
-    category: 'Commercial',
+    title: 'Modern Hall Design',
+    category: 'Gypsum Design',
   },
   {
     id: 10,
     src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Contemporary Wall Art',
-    category: 'Residential',
+    title: '3D Panel Mold',
+    category: 'Mould Design',
   },
   {
     id: 11,
     src: 'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Showroom Display',
-    category: 'Commercial',
+    title: 'Executive Office Ceiling',
+    category: 'Gypsum Design',
   },
   {
     id: 12,
     src: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    title: 'Victorian Style Room',
-    category: 'Residential',
+    title: 'Traditional Cornice Mold',
+    category: 'Mould Design',
   },
 ];
 
@@ -112,7 +112,7 @@ const Gallery = () => {
       <section className="page-header">
         <div className="container">
           <h1>Our Gallery</h1>
-          <p>View our completed projects and installations</p>
+          <p>Explore our Mould and Gypsum Design</p>
         </div>
       </section>
 
@@ -125,19 +125,19 @@ const Gallery = () => {
               className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
               onClick={() => setFilter('all')}
             >
-              All Projects
+              All Design
             </button>
             <button
-              className={`filter-btn ${filter === 'residential' ? 'active' : ''}`}
-              onClick={() => setFilter('residential')}
+              className={`filter-btn ${filter === 'mould product' ? 'active' : ''}`}
+              onClick={() => setFilter('mould product')}
             >
-              Residential
+              Mould Design
             </button>
             <button
-              className={`filter-btn ${filter === 'commercial' ? 'active' : ''}`}
-              onClick={() => setFilter('commercial')}
+              className={`filter-btn ${filter === 'gypsum product' ? 'active' : ''}`}
+              onClick={() => setFilter('gypsum product')}
             >
-              Commercial
+              Gypsum Design
             </button>
           </div>
 
