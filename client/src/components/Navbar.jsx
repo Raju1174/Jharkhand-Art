@@ -22,8 +22,17 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <span className="logo-text">Jharkhand Art</span>
-          <span className="logo-subtext">By Ishita Enterprises</span>
+          <div className="logo-mandala">
+            <div className="mandala-icon">
+              <div className="mandala-ring ring-1"></div>
+              <div className="mandala-ring ring-2"></div>
+              <div className="mandala-center">JA</div>
+            </div>
+            <div className="logo-text-wrapper">
+              <span className="logo-main-text">Jharkhand Art</span>
+              <span className="logo-sub-text">By Ishita Enterprises</span>
+            </div>
+          </div>
         </Link>
 
         <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
