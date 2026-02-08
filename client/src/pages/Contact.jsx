@@ -78,7 +78,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h4>Email</h4>
-                    <a href="mailto:info@jharkhandart.com">info@jharkhandart.com</a>
+                    <a href="mailto:jharkhandart07@gmail.com">jharkhandart07@gmail.com</a>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h4>Address</h4>
-                    <span>Ranchi, Jharkhand, India - 834001</span>
+                    <span>Bakaspura, Jainamore, Bokaro, Jharkhand - 829301</span>
                   </div>
                 </div>
 
@@ -103,10 +103,10 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Map */}
               <div className="map-container">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117223.98792377048!2d85.2547803!3d23.3440997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc09d49d6899f43e!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.8!2d86.0547!3d23.7571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f69b0c0e0e0e0e%3A0x0!2sBakaspura%2C%20Jainamore%2C%20Bokaro%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
                   width="100%"
                   height="250"
                   style={{ border: 0, borderRadius: '8px' }}
