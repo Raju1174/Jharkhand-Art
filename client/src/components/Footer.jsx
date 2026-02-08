@@ -11,8 +11,17 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              <span className="logo-text">Jharkhand Art</span>
-              <span className="logo-subtext">By Ishita Enterprises</span>
+              <div className="footer-mandala">
+                <div className="footer-mandala-icon">
+                  <div className="footer-ring ring-1"></div>
+                  <div className="footer-ring ring-2"></div>
+                  <div className="footer-mandala-center">JA</div>
+                </div>
+                <div className="footer-text-wrapper">
+                  <span className="footer-main-text">Jharkhand Art</span>
+                  <span className="footer-sub-text">By Ishita Enterprises</span>
+                </div>
+              </div>
             </Link>
             <p className="footer-description">
               Crafting exquisite gypsum ceiling medallions, cornices, and 3D wall panels
